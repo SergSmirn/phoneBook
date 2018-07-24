@@ -1,0 +1,35 @@
+.header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.more {
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+  border-top: 1px solid #333;
+}
+
+.navig {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+}
+
+.more:hover {
+  border-bottom: 1px solid #333;
+  background-color: whitesmoke;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15%;
+  padding: 8px;
+}

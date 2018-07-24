@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Добавить контакт</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="form" (submit)="onSubmitNewItem()">
+    <div class="form-group">
+      <label for="name">
+        Имя
+      </label>
+      <input formControlName="name" [class.is-invalid]="getValidation('name')" type="text" class="form-control" id="name" placeholder="Name">
+      <div class="invalid-feedback">
+        {{ form.get('name').errors && getErrors(form.get('name').errors) }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="surname">
+        Фамилия
+      </label>
+      <input formControlName="surname" [class.is-invalid]="getValidation('surname')" type="text" class="form-control" id="surname"
+        placeholder="Surname">
+      <div class="invalid-feedback">
+        {{ form.get('surname').errors && getErrors(form.get('surname').errors) }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">
+        Почта
+      </label>
+      <input formControlName="email" [class.is-invalid]="getValidation('email')" type="email" class="form-control" id="email" placeholder="Email">
+      <div class="invalid-feedback">
+        {{ form.get('email').errors && getErrors(form.get('email').errors) }}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phone">
+        Телефон
+      </label>
+      <input formControlName="phone" [class.is-invalid]="getValidation('phone')" type="tel" class="form-control" id="phone" placeholder="Phone number">
+      <div class="invalid-feedback">
+        {{ form.get('phone').errors && getErrors(form.get('phone').errors) }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">
+      Подтвердить
+    </button>
+  </form>
+</div>

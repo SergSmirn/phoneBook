@@ -1,0 +1,15 @@
+.not-found {
+  text-align: center;
+}
+h1  {
+  position: relative;
+  font-size: 150px;
+  top: 10vh;
+  color: black;
+}
+h2 {
+  position: relative;
+  font-size: 30px;
+  top: 30vh;
+  color: black;
+}

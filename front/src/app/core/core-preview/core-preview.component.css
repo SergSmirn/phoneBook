@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  border-top: 1px solid #333;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+:host(._active) {
+  background-color: #e0e0e0;
+}
+
+:host(._active):hover {
+  background-color: #e0e0e0;
+}
+
+:host:hover {
+  background-color: #eee;
+}
+
+.preview-item {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 8px;
+  line-break: auto;
+  word-break: break-word;
+}
+
+.icons {
+  position: absolute;
+  top: 5px;
+  right: -10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+}
+
+.material-icons {
+  font-size: 20px;
+  color: #1400c7c6;
+}
+
+.material-icons:active {
+  transform: scale(1.1);
+}
+
+.help-text {
+  font-size: 14px;
+  color: #999;
+}

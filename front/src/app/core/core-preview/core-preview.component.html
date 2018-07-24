@@ -1,0 +1,27 @@
+<div class="row"
+     (click)="onClickItem()">
+  <div class="col-md-4 preview-item">
+    {{item.name}}
+  </div>
+
+  <div class="col-md-4 preview-item"
+    [class.text-muted]="!item.surname"
+    [class.h6]="!item.surname">
+    {{item.surname ? item.surname : 'не указана'}}
+  </div>
+
+  <div class="col-md-4 preview-item">
+    <div [class.text-muted]="!item.phone"
+         [class.h6]="!item.phone">
+      <span class="help-text">тел.: </span>{{item.phone ? item.phone : 'не указан'}}
+    </div>
+    <div [class.text-muted]="!item.email"
+         [class.h6]="!item.email">
+      <span class="help-text">почта: </span>{{item.email ? item.email : 'не указана'}}
+    </div>
+  </div>
+</div>
+
+<div class="icons" (click)="onEditItem()">
+  <i class="material-icons">&#xe254;</i>
+</div>

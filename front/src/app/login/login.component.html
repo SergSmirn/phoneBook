@@ -1,0 +1,37 @@
+<div class="conteiner">
+  <div class="row">
+    <div class="col-auto mr-auto navig">
+      <h3>Телефонная книга</h3>
+    </div>
+  </div>
+</div>
+
+<div class="justify-content-center">
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div class="text-danger" *ngIf="is_error">
+      <b>Неправильная пара логин-пароль</b>
+    </div>
+    <div class="form-group">
+      <label>Логин</label>
+      <input formControlName="username" [class.is-invalid]="getValidation('username')" type="text" placeholder="Введите логин" class="form-control">
+      <div class="invalid-feedback">
+        {{ form.get('username').errors && getErrors(form.get('username').errors) }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Пароль</label>
+      <input formControlName="password" [class.is-invalid]="getValidation('password')" type="password" placeholder="Введите пароль" class="form-control">
+      <div class="invalid-feedback">
+        {{form.get('password').errors && getErrors(form.get('password').errors)}}
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-block">Войти</button>
+    </div>
+
+  </form>
+</div>

@@ -1,0 +1,55 @@
+
+  <div class="conteiner">
+    <div class="row">
+      <div class="col-auto mr-auto navig">
+        <h3>Телефонная книга</h3>
+      </div>
+      <div class="col-auto ml-auto navig">
+        <a class="nav-link" href="#" (click)="onLogout()">Выйти</a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="row">
+  <div class="col-md-12" style="margin-bottom: 2%">
+    <input class="form-control" placeholder="Поиск по данным" [(value)]="searchValue" type="text" (input)="onSearchChange($event)">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4 ml-1 mr-auto" *ngIf="activeItems.length">
+    <button class="btn btn-block btn-danger" (click)="onDeleteItems()">Удалить записи</button>
+  </div>
+  <div class="col-md-4 mr-1 ml-auto">
+    <button class="btn btn-block btn-success" (click)="onAddItems()">Добавить</button>
+  </div>
+</div>
+<br>
+<div class="row" *ngIf="(items$ | async)?.length">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4 header">
+        <h3>Имя</h3>
+      </div>
+      <div class="col-md-4 header">
+        <h3>Фамилия</h3>
+      </div>
+      <div class="col-md-4 header">
+        <h3>Информация</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row not-found" *ngIf="!(items$ | async)?.length">
+  <h2>Ничего не найдено :`(</h2>
+</div>
+<div class="row">
+  <div class="col-md-12" *ngFor="let item of (items$ | async)">
+    <app-core-preview [item]="item" (clickItem)="clickItem($event)" (onEdit)="onEditItem(item)"></app-core-preview>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 more" (click)="onMoreItems()" *ngIf="(main$ | async)">
+    <h3>Ещё</h3>
+  </div>
+</div>
