@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from "./auth.service";
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CoreService } from '../core/core.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private coreService: CoreService, private router: Router) { }
 
   form: FormGroup;
 
@@ -49,7 +50,9 @@ export class LoginComponent implements OnInit {
         if (token) {
           this.authService.setToken(token);
           localStorage.setItem('id_token', token);
-          this.router.navigate([''])
+          this.router.navigate(['']);
+          this.coreService.page = 0;
+          this.coreService.listItems(0);
         }
       }, error => { 
         console.error(error);
