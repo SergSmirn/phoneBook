@@ -54,7 +54,7 @@ def contacts_detail(request, pk):
 def contacts_search(request, query):
 
     if request.method == 'GET':
-        contacts = Contact.objects.filter(Q(name__istartswith=query) |
+        contacts = request.user.contact_set.filter(Q(name__istartswith=query) |
                                           Q(surname__istartswith=query) |
                                           Q(email__istartswith=query) |
                                           Q(phone__istartswith=query))
