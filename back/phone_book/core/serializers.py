@@ -4,7 +4,7 @@ from core.validators import phone_validator
 
 
 class ContactSerializer(serializers.ModelSerializer):
-    phone = serializers.CharField(validators=[phone_validator])
+    phone = serializers.CharField(validators=[phone_validator], allow_blank=True)
 
     class Meta:
         model = Contact
