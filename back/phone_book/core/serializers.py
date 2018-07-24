@@ -1,8 +1,10 @@
 from rest_framework import serializers
 from core.models import Contact
+from core.validators import phone_validator
 
 
 class ContactSerializer(serializers.ModelSerializer):
+    phone = serializers.CharField(validators=[phone_validator])
 
     class Meta:
         model = Contact
