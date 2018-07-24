@@ -10,9 +10,9 @@ import { findIndex, remove, find, filter } from "lodash";
   providedIn: 'root'
 })
 export class CoreService {
-  private url = 'http://178.62.226.144/contacts/';
-  private searchUrl = 'http://178.62.226.144/contacts_search/';
-  private logoutUrl = 'http://178.62.226.144/logout/'
+  private url = 'http://178.62.226.144/api/contacts/';
+  private searchUrl = 'http://178.62.226.144/api/contacts_search/';
+  private logoutUrl = 'http://178.62.226.144/api/logout/'
   private listSubject = new BehaviorSubject<ICore[]>(null);
   private isMain = new BehaviorSubject<boolean>(null);
   private reservedList = []

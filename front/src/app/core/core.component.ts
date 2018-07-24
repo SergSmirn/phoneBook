@@ -30,6 +30,7 @@ export class CoreComponent implements OnInit {
   ngOnInit() {
     if (!this.authService.getToken()) {
       this.router.navigate(['/login']);
+      return;
     }
     this.coreService.listItems(this.coreService.page);
     this.items$ = this.coreService.getListItems$();

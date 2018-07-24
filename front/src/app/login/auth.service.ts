@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  private loginUrl = 'http://178.62.226.144/login/'
+  private loginUrl = 'http://178.62.226.144/api/login/'
   private token : string
 
   login(username: string, password: string) {

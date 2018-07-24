@@ -21,10 +21,10 @@ from rest_framework.authtoken import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('contacts/', core_views.contacts_list),
-    path('contacts/<int:pk>/', core_views.contacts_detail),
-    path('contacts_search/<query>/', core_views.contacts_search),
-    path('logout/', core_views.logout),
-    path('login/', views.obtain_auth_token),
+    path('api/contacts/', core_views.contacts_list),
+    path('api/contacts/<int:pk>/', core_views.contacts_detail),
+    path('api/contacts_search/<query>/', core_views.contacts_search),
+    path('api/logout/', core_views.logout),
+    path('api/login/', views.obtain_auth_token),
 
 ]
