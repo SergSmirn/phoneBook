@@ -116,7 +116,10 @@ export class CoreService {
     const options = this.generateHeaders();
     this.http.post(this.logoutUrl, null, options)
     .subscribe(() => {
-      this.authService.logout()
+      this.authService.logout();
+      this.reservedList = [];
+      this.listSubject.next(this.reservedList);
+      this.isMain.next(true);
       }, error => {
         console.error(error);
       });
